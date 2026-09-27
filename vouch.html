@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src https://nukwzrwigjyzakktxqtp.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Confirm a group dream · Wishtide</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Figtree:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Staff members confirm a group dream's vouch here (link from the Wishtide email). The button, not the link,
+     confirms, so email scanners that open links can't confirm by accident. -->
+<main class="legal">
+  <p><a href="./"><img src="favicon.png" alt="" width="36" height="36"> wishtide</a></p>
+  <h1>Confirm a group dream</h1>
+  <p>Someone shared a group dream on Wishtide for your organization and said you vouch for it. If that's right, please confirm.</p>
+  <p lang="es">Alguien compartió en Wishtide un sueño de grupo para tu organización e indicó que tú lo avalas. Si es correcto, confírmalo.</p>
+  <p><button id="confirm" class="cta" type="button">Yes, I confirm · Sí, lo confirmo</button></p>
+  <p id="result" role="status"></p>
+  <p>If you don't recognize this dream, do nothing and write to wishtide.app@gmail.com.<br>
+     <span lang="es">Si no reconoces este sueño, no hagas nada y escribe a wishtide.app@gmail.com.</span></p>
+</main>
+<script src="vouch.js" defer></script>
+</body>
+</html>

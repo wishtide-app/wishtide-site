@@ -107,3 +107,4 @@
 .legal p { line-height: 1.6; }
 .legal .draft { background: #FFEBDD; border-radius: 14px; padding: 12px 14px; }
 footer a { color: inherit; }
+button.cta { border: 0; cursor: pointer; font: inherit; }
