@@ -98,3 +98,12 @@
 .eyebrow.on-deep { color: var(--sun); }
 .select-all { user-select: all; }
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Privacy Policy page */
+.legal { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+.legal a { color: var(--deep, #0E4F5C); font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.legal h1 { font-family: 'Shrikhand', serif; color: #0E4F5C; font-weight: 400; }
+.legal h2 { font-size: 18px; margin: 28px 0 6px; }
+.legal p { line-height: 1.6; }
+.legal .draft { background: #FFEBDD; border-radius: 14px; padding: 12px 14px; }
+footer a { color: inherit; }
