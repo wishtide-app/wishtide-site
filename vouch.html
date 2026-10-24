@@ -12,17 +12,83 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- Staff members confirm a group dream's vouch here (link from the Wishtide email). The button, not the link,
-     confirms, so email scanners that open links can't confirm by accident. -->
-<main class="legal">
-  <p><a href="./"><img src="favicon.png" alt="" width="36" height="36"> wishtide</a></p>
-  <h1>Confirm a group dream</h1>
-  <p>Someone shared a group dream on Wishtide for your organization and said you vouch for it. If that's right, please confirm.</p>
-  <p lang="es">Alguien compartió en Wishtide un sueño de grupo para tu organización e indicó que tú lo avalas. Si es correcto, confírmalo.</p>
-  <p><button id="confirm" class="cta" type="button">Yes, I confirm · Sí, lo confirmo</button></p>
-  <p id="result" role="status"></p>
-  <p>If you don't recognize this dream, do nothing and write to wishtide.app@gmail.com.<br>
-     <span lang="es">Si no reconoces este sueño, no hagas nada y escribe a wishtide.app@gmail.com.</span></p>
+<!-- Staff members of an organization answer a group dream's vouch here (link from the Wishtide email, see
+     supabase/functions/group-checks). Buttons, not the link, send the answer, so email scanners that open links
+     can't confirm by accident. Texts in English and Spanish live in vouch.js (?l=es picks Spanish). -->
+<main class="legal vouch">
+  <p class="vouch-top">
+    <a href="./"><img src="favicon.png" alt="" width="36" height="36"> wishtide</a>
+    <span class="vouch-lang">
+      <button type="button" class="vouch-link" data-lang="en" lang="en">English</button> ·
+      <button type="button" class="vouch-link" data-lang="es" lang="es">Español</button>
+    </span>
+  </p>
+  <h1 id="title">Confirm a group dream</h1>
+  <p id="intro"></p>
+  <blockquote id="dream-card" class="vouch-card" hidden>
+    <p id="dream-text" class="vouch-dream"></p>
+    <p id="dream-meta" class="vouch-meta"></p>
+  </blockquote>
+
+  <!-- Step 1: do you know this person? -->
+  <section id="step-ask" hidden>
+    <h2 id="ask-q"></h2>
+    <p class="vouch-buttons">
+      <button id="ask-yes" type="button" class="cta" data-t="yesKnow"></button>
+      <button id="ask-no" type="button" class="vouch-secondary" data-t="noKnow"></button>
+    </p>
+  </section>
+
+  <!-- Step 2: the short form -->
+  <section id="step-form" hidden>
+    <fieldset class="vouch-field">
+      <legend data-t="howLabel"></legend>
+      <div id="how-options" class="vouch-options"></div>
+      <input id="how-other" type="text" maxlength="80" hidden>
+    </fieldset>
+    <fieldset class="vouch-field">
+      <legend data-t="longLabel"></legend>
+      <div id="long-options" class="vouch-options"></div>
+    </fieldset>
+    <fieldset class="vouch-field">
+      <legend data-t="realLabel"></legend>
+      <div id="real-options" class="vouch-options"></div>
+    </fieldset>
+    <div class="vouch-field">
+      <label for="note" data-t="noteLabel"></label>
+      <textarea id="note" maxlength="500" rows="4"></textarea>
+      <p id="note-count" class="vouch-meta"></p>
+    </div>
+    <p id="form-error" class="vouch-error" role="alert"></p>
+    <p class="vouch-buttons">
+      <button id="send" type="button" class="cta" data-t="send"></button>
+      <button id="back" type="button" class="vouch-link" data-t="back"></button>
+    </p>
+  </section>
+
+  <!-- Step 2b: "No, I don't know them" -->
+  <section id="step-no" hidden>
+    <p data-t="noIntro"></p>
+    <div class="vouch-field">
+      <label for="no-note" data-t="noteLabel"></label>
+      <textarea id="no-note" maxlength="500" rows="4"></textarea>
+    </div>
+    <p id="no-error" class="vouch-error" role="alert"></p>
+    <p class="vouch-buttons">
+      <button id="send-no" type="button" class="cta" data-t="send"></button>
+      <button id="back-no" type="button" class="vouch-link" data-t="back"></button>
+    </p>
+  </section>
+
+  <!-- Step 3: thank you -->
+  <section id="step-done" class="vouch-done" hidden tabindex="-1">
+    <p class="vouch-heart" aria-hidden="true">💛</p>
+    <h2 id="done-title"></h2>
+    <p id="done-body"></p>
+  </section>
+
+  <p id="status" role="status"></p>
+  <p class="vouch-meta" id="contact"></p>
 </main>
 <script src="vouch.js" defer></script>
 </body>

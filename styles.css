@@ -114,3 +114,32 @@
 .legal .draft { background: #FFEBDD; border-radius: 14px; padding: 12px 14px; }
 footer a { color: inherit; }
 button.cta { border: 0; cursor: pointer; font: inherit; }
+
+/* Staff vouch page for group dreams (vouch.html, migration 0048) */
+.vouch [hidden] { display: none !important; }
+.vouch section { padding-block: 8px; }
+.vouch-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.vouch-lang { color: var(--muted); font-size: 15px; }
+.vouch button.vouch-link { background: none; color: var(--deep); padding: 6px 4px; font-weight: 800; border-radius: 6px; }
+.vouch-card { margin: 16px 0; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px 18px; }
+.vouch-card p { margin: 4px 0; }
+.vouch-dream { font-family: 'Shrikhand', Georgia, serif; font-size: 20px; line-height: 1.35; }
+.vouch-meta { color: var(--muted); font-size: 14px; }
+.vouch-buttons { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 18px; }
+.vouch button.vouch-secondary { background: var(--card); color: var(--ink); border: 2px solid var(--line); }
+.vouch-field { border: 0; margin: 18px 0 0; padding: 0; min-width: 0; }
+.vouch-field legend, .vouch-field label[for] { font-weight: 800; margin-bottom: 8px; display: block; padding: 0; }
+.vouch-options { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.vouch-option { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.vouch-option input { width: 20px; height: 20px; margin: 0; accent-color: var(--deep); }
+.vouch input[type="text"], .vouch textarea { width: 100%; margin-top: 8px; font: inherit; color: var(--ink); background: var(--card); border: 1px solid var(--muted); border-radius: 12px; padding: 10px 12px; }
+.vouch-error { color: #B3261E; font-weight: 600; }
+.vouch-done { text-align: center; padding-block: 32px !important; outline: none; }
+.vouch-done h2 { font-family: 'Shrikhand', Georgia, serif; font-size: 34px; color: var(--deep); margin: 0 0 8px; }
+.vouch-done p { font-size: 19px; }
+.vouch-done .vouch-heart { font-size: 54px; margin: 0; line-height: 1.2; }
+.vouch-error.vouch-busy { color: var(--muted); }
+@media (prefers-color-scheme: dark) {
+  .vouch button.vouch-link, .vouch-done h2 { color: var(--glass); }
+  .vouch-error { color: #FFB4AB; }
+}
