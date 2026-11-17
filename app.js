@@ -34,13 +34,16 @@ form.addEventListener('submit', async (e) => {
         role: form.role.value,
         firstName: form.firstName.value.slice(0, 60),
         dream: form.dream.value.slice(0, 300),
+        betaTester: form.betaTester.checked,
         website: form.website.value, // spam trap
         elapsedMs: Date.now() - openedAt,
       }),
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
-    show('ok', "You're on the list. We'll email you the day Wishtide opens. 🌊");
+    show('ok', form.betaTester.checked
+      ? "You're on the list as a beta tester. We'll email you when there's a spot. 🧪 · ¡Listo! Te escribimos cuando haya cupo."
+      : "You're on the list. We'll email you the day Wishtide opens. 🌊 · ¡Listo! Te escribimos cuando abramos.");
     form.reset();
     dreamField.hidden = true;
   } catch (err) {

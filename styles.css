@@ -163,3 +163,18 @@ body.soon { background: radial-gradient(circle at 50% 30%, #2b9ad0 0%, #1273b4 4
 .soon-form input, .soon-form textarea { width: 100%; max-width: 100%; }
 .soon-name { font-size: clamp(46px, 12vw, 96px); }
 .soon-form-title, .soon-footer span { overflow-wrap: anywhere; }
+/* 2026-11-16: beta tester checkbox, and a shorter top on phones so the form shows on the first screen. */
+.soon-form { scroll-margin-top: 16px; }
+.soon .check { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; font-weight: 700; background: rgba(255,183,117,.16); border: 1px solid rgba(255,183,117,.55); border-radius: 14px; padding: 12px 14px; }
+.soon .check input { width: 22px; height: 22px; margin: 2px 0 0; flex: none; accent-color: #FFB775; }
+.soon .check small { display: block; font-weight: 400; color: #D6ECF7; margin-top: 2px; }
+@media (max-width: 600px) {
+  .soon-main { padding-top: 28px; }
+  .soon-logo { width: 96px; height: 96px; border-radius: 24px; }
+  .soon-name { font-size: 46px; margin-top: 14px; }
+  .soon-motto { margin-top: 8px; font-size: 15px; }
+  .soon-big { font-size: 22px; margin-top: 16px; }
+  .soon-small { font-size: 16px; margin-top: 6px; }
+  .soon-pill { margin-top: 14px; font-size: 16px; padding: 8px 20px; }
+  .soon-form { margin-top: 22px; padding: 18px; }
+}
